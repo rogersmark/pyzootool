@@ -9,7 +9,6 @@ class ZooResult():
         self.parse_results(json_data)
         
     def parse_results(self, json_data):
-        print json_data
         self.uid = json_data['uid']
         self.title = json_data['title']
         self.url = json_data['url']

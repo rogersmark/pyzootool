@@ -3,6 +3,11 @@ Introduction
 
 pyzootool wraps the API of http://www.zootool.com. It's currently still very early in development, and not quite everything works.
 
+Install
+=====================
+
+You can either just grab the head here from Github, or you can pip or easy_install the package as well as it's now on pypi.
+
 What Works 
 =====================
 

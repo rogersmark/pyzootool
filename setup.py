@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name = "pyzootool",
-    version = "0.1",
+    version = "0.2",
     author = "Mark Rogers",
     author_email = "f4nt@f4ntasmic.com",
     url = "http://www.f4ntasmic.com",

@@ -1,0 +1,3 @@
+
+class ZooAuth():
+    pass

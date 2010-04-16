@@ -3,7 +3,7 @@ import urllib
 
 from pyzootool import ROOT_URL
 
-class ZooResult():
+class ZooItemResult():
     
     def __init__(self, json_data):
         self.parse_results(json_data)
@@ -33,8 +33,8 @@ class ZooItem():
         )
         resp, content = self.http.request(url)
         json_data = json.loads(content)
-        result = ZooResult(item)
-        return zoo_results
+        result = ZooItemResult(item)
+        return result
         
     def get_popular(self, pop_type):
         values = {'type': pop_type, 'apikey': self.apikey }
@@ -45,6 +45,6 @@ class ZooItem():
         json_data = json.loads(content)
         zoo_results = []
         for item in json_data:
-            result = ZooResult(item)
+            result = ZooItemResult(item)
             zoo_results.append(result)
         return zoo_results

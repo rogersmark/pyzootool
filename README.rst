@@ -12,12 +12,12 @@ What Works
 - Getting information on a user
 - Getting list of followers that a user has
 - Getting list of friends that a user has
+- Adding items to zootool
 
 What Doesn't Work
 =====================
 
-- Authentication and anything that needs it
-- Adding items to zootool.com
+- Features nobody told me they wanted :) (Auth issues now fixed)
 
 Examples
 =====================
@@ -36,3 +36,10 @@ Here's a few examples of what you can do with this tool::
 	popular_items = zoocontrol.item.get_popular('week')
 	user_items = zoocontrol.item.get_items_by_user('username')
 	item = zoocontrol.item.get_item('uid')
+	
+Here's use of authentication::
+
+	from pyzootool import controller
+	zoocontrol = controller.ZooControl(apikey=YOUR_API_KEY, username=USER, password=PASS)
+	result = zoocontrol.item.add_item(url="http://www.google.com", title="A cool new search engine!")
+	

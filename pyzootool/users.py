@@ -15,7 +15,6 @@ class ZooUserResult():
         """
         Maps out the json data fields to variables
         """
-        print json_data
         self.username = json_data['username']
         self.website = json_data['website']
         self.avatar = json_data['avatar']

@@ -100,3 +100,34 @@ class ZooItem():
             result = ZooItemResult(item)
             zoo_results.append(result)
         return zoo_results
+        
+    def add_item(self, url, title, tags=None, description=None, referer=None,
+        public=None):
+        """
+        Arguments:
+            url - Required. URL to object to be added
+            title - Required. Title of object
+            tags - Optional. Comma delimited string of tags
+            description - Optional.
+            referer - Optional
+            public - Optional. Must equal 'y' or 'n'
+            
+        Returns:
+            result - ZooItemResult
+        """
+        values = {
+            'url': url,
+            'title': title,
+            'tags': tags,
+            'description': description,
+            'referer': referer,
+            'public': public,
+            'apikey': self.apikey
+        }
+        url = "%s/api/add/?%s" % (
+            ROOT_URL, urllib.urlencode(values)
+        )
+        resp, content = self.http.request(url)
+        json_data = json.loads(content)
+        result = ZooItemResult(json_data['item'])
+        return result

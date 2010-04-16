@@ -13,4 +13,4 @@ class ZooControl():
             ## TODO: Implement this
             self.auth = auth.ZooAuth(self.api_key, username, password)
         self.item = items.ZooItem(self.apikey, self.http)
-        #self.user = users.ZooUser(self.apikey, self.http)
+        self.user = users.ZooUser(self.apikey, self.http)

@@ -25,3 +25,11 @@ class ZooControl():
             
         self.item = items.ZooItem(self.apikey, self.http)
         self.user = users.ZooUser(self.apikey, self.http)
+        
+    def __unicode__(self):
+        if self.http.credentials.credentials:
+            return u"ZooControl - Authenticated"
+        return u"ZooControl - Unautheneticated"
+        
+    def __str__(self):
+        return self.__unicode__()

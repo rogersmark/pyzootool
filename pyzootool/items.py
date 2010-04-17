@@ -11,6 +11,12 @@ class ZooItemResult():
         """
         self.parse_results(json_data)
         
+    def __unicode__(self):
+        return u"%s - %s" % (self.title, self.uid)
+        
+    def __str__(self):
+        return self.__unicode__()
+        
     def parse_results(self, json_data):
         """
         Maps out the json data fields to variables

@@ -11,6 +11,12 @@ class ZooUserResult():
         """
         self.parse_results(json_data)
         
+    def __unicode__(self):
+        return u"%s" % self.username
+
+    def __str__(self):
+        return self.__unicode__()
+        
     def parse_results(self, json_data):
         """
         Maps out the json data fields to variables
@@ -49,6 +55,7 @@ class ZooUser():
         resp, content = self.http.request(url)
         json_data = json.loads(content)
         result = ZooUserResult(json_data)
+        return result
         
     def get_user_friends(self, username):
         """

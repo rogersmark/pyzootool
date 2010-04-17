@@ -2,6 +2,7 @@ import json
 import urllib
 
 from pyzootool import ROOT_URL
+from pyzootool import error
 
 class ZooUserResult():
     
@@ -27,7 +28,7 @@ class ZooUserResult():
             self.avatar = json_data['avatar']
             self.profile = json_data['profile']
         except AttributeError:
-            return None
+            raise error.ZooError("Failed to parse user json")
         
 class ZooUser():
     

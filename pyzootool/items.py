@@ -32,7 +32,7 @@ class ZooItemResult():
             self.tinyurl = json_data['tinyurl']
             self.thumbnail = json_data['thumbnail']
         except AttributeError:
-            return None
+            raise error.ZooError("Failed to parse item json")
 
 class ZooItem():
     

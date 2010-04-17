@@ -9,6 +9,14 @@ from pyzootool import items, users
 class ZooControl():
     
     def __init__(self, apikey, username=None, password=None):
+        """
+        Arguments:
+            apikey - Zootool.com API Key. REQUIRED
+            username - Optional. Required for authenticated requests
+            password - Optional. Required for authenticated requests
+            
+        Creates our httplib2, items and user objects.
+        """
         self.apikey = apikey
         self.http = httplib2.Http()
         if username and password:

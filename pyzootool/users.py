@@ -15,16 +15,15 @@ class ZooUserResult():
         """
         Maps out the json data fields to variables
         """
-        self.username = json_data['username']
-        self.website = json_data['website']
-        self.avatar = json_data['avatar']
-        self.profile = json_data['profile']
+        try:
+            self.username = json_data['username']
+            self.website = json_data['website']
+            self.avatar = json_data['avatar']
+            self.profile = json_data['profile']
+        except AttributeError:
+            return None
         
 class ZooUser():
-    """
-    TODO:
-        This whole class
-    """
     
     def __init__(self, apikey, http):
         """
@@ -69,10 +68,7 @@ class ZooUser():
         for item in json_data:
             result = ZooUserResult(item)
             zoo_results.append(result)
-        if zoo_results:
-            return zoo_results
-        else:
-            raise AttributeError("No Results Found")
+        return zoo_results
         
     def get_user_followers(self, username):
         """

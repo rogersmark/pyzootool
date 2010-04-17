@@ -15,15 +15,18 @@ class ZooItemResult():
         """
         Maps out the json data fields to variables
         """
-        self.uid = json_data['uid']
-        self.title = json_data['title']
-        self.url = json_data['url']
-        self.type = json_data['type']
-        self.views = json_data['views']
-        self.likes = json_data['likes']
-        self.permalink = json_data['permalink']
-        self.tinyurl = json_data['tinyurl']
-        self.thumbnail = json_data['thumbnail']
+        try:
+            self.uid = json_data['uid']
+            self.title = json_data['title']
+            self.url = json_data['url']
+            self.type = json_data['type']
+            self.views = json_data['views']
+            self.likes = json_data['likes']
+            self.permalink = json_data['permalink']
+            self.tinyurl = json_data['tinyurl']
+            self.thumbnail = json_data['thumbnail']
+        except AttributeError:
+            return None
 
 class ZooItem():
     

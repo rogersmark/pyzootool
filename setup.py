@@ -10,7 +10,7 @@ setup(
 
     packages = find_packages('.'),
     package_dir = {'':'.'},
-    data_files=[('.', ['README',]),],
+    data_files=[('.', ['README.rst',]),],
     package_data = {
     },
     include_package_data=True,

@@ -131,7 +131,8 @@ class ZooItem():
             'description': description,
             'referer': referer,
             'public': public,
-            'apikey': self.apikey
+            'apikey': self.apikey,
+            'login': 'true'
         }
         url = "%s/api/add/?%s" % (
             ROOT_URL, urllib.urlencode(values)
